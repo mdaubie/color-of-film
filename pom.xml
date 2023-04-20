@@ -11,6 +11,7 @@
     <name>Color of Film</name>
     <modules>
         <module>core</module>
+        <module>cli</module>
     </modules>
 
     <properties>
