@@ -19,10 +19,10 @@ jobs:
       - name: Determine next version
         id: versioning
         uses: ietf-tools/semver-action@v1
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            branch: master
-            patchList: fix, refactor, ci, docs, perf, style, test
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          patchList: fix, refactor, ci, docs, perf, style, test
       - name: Print version output
         run: |
           echo next version: ${{steps.version.outputs.next}}
