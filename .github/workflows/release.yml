@@ -17,14 +17,18 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Determine next version
-        id: version
-        uses: thenativeweb/get-next-version@main
+        id: versioning
+        uses: ietf-tools/semver-action@v1
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            branch: master
+            patchList: fix, refactor, ci, docs, perf, style, test
       - name: Print version output
         run: |
-          echo hasNextVersion: ${{steps.version.outputs.hasNextVersion}}
-          echo version: ${{steps.version.outputs.version}}
+          echo next version: ${{steps.version.outputs.next}}
       - name: Update Maven version
-        run: mvn -B versions:set -DnewVersion=${{steps.version.outputs.version}} -DgenerateBackupPoms=false
+        # TODO does not seem to work
+        run: mvn -B versions:set -DnewVersion=${{steps.version.outputs.next}} -DgenerateBackupPoms=false
       - name: Generate changelog
         id: changelog
         uses: heinrichreimer/github-changelog-generator-action@v2.3
@@ -35,12 +39,12 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add pom.xml CHANGELOG.md
-          git commit -m "Bump version to ${{steps.version.outputs.version}}"
+          git commit -m "Bump version to ${{steps.version.outputs.next}}"
       - name: Create release tag
         uses: actions/create-release@v1
         with:
-          tag_name: ${{steps.version.outputs.version}}
-          release_name: Release ${{steps.version.outputs.version}}
+          tag_name: ${{steps.version.outputs.next}}
+          release_name: Release ${{steps.version.outputs.next}}
           body: |
             Changes in this release:
             ${{ steps.changelog.outputs.changelog }}
