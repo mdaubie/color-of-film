@@ -21,7 +21,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
           patchList: fix, refactor, ci, docs, perf, style, test
-      - name: Create tag
+      - name: Create tag # next tag needs to exist for changelog generation
+        id: generate-tag
         run: |
           git tag ${{ steps.versioning.outputs.nextStrict }}
           git push origin ${{ steps.versioning.outputs.nextStrict }}
@@ -55,3 +56,6 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete generated tag on failure
+        if: failure() && steps.generate-tag.outcome == 'success'
+        run: git tag -d ${{ steps.versioning.outputs.nextStrict }}
