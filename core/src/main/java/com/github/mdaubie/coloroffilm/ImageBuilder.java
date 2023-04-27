@@ -19,6 +19,7 @@ public class ImageBuilder {
     private final int resolution;
     private ImageShaper[] shapers;
     private String outputTitle = "";
+    private boolean openFileOnSave = false;
 
     //Recommended to use de FilmCapture.getBuilder() method
     public ImageBuilder(FilmCapture capture, int resolution, int startFrameIdx, int endFrameIdx) {
@@ -67,7 +68,7 @@ public class ImageBuilder {
         System.out.println();
         capture.release();
         for (ImageShaper painter : shapers)
-            painter.saveImage(capture.outputDir, outputTitle);
+            painter.saveImage(capture.outputDir, outputTitle, openFileOnSave);
     }
 
     public void setShapers(ImageShaper... shapers) {
@@ -76,5 +77,9 @@ public class ImageBuilder {
 
     public void setOutputTitle(String outputTitle) {
         this.outputTitle = outputTitle;
+    }
+
+    public void setOpenFileOnSave(boolean openFileOnSave) {
+        this.openFileOnSave = openFileOnSave;
     }
 }
