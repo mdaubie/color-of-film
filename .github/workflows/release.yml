@@ -1,0 +1,57 @@
+name: Release
+
+on:
+  workflow_dispatch: # Trigger manually
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Determine next version
+        id: versioning
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          patchList: fix, refactor, ci, docs, perf, style, test
+      - name: Create tag
+        run: |
+          git tag ${{ steps.versioning.outputs.nextStrict }}
+          git push origin ${{ steps.versioning.outputs.nextStrict }}
+      - name: Update CHANGELOG.md
+        id: generate-changelog
+        uses: requarks/changelog-action@v1
+        with:
+          token: ${{ github.token }}
+          tag: ${{ steps.versioning.outputs.nextStrict }}
+          excludeTypes: chore
+      - name: Update pom.xml
+        run: mvn -B versions:set -DnewVersion=${{ steps.versioning.outputs.nextStrict }} -DgenerateBackupPoms=false
+      - name: Commit CHANGELOG.md and pom.xml
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add CHANGELOG.md
+          git commit -m "chore(release): update CHANGELOG.md for ${{ steps.versioning.outputs.next }}"
+          git add pom.xml
+          git commit -m "chore(release): update pom.xml for ${{ steps.versioning.outputs.next }}"
+          git push origin master
+      - name: Create release tag
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ steps.versioning.outputs.nextStrict }}
+          release_name: Release ${{ steps.versioning.outputs.nextStrict }}
+          body: |
+            Changes in this release:
+            ${{ steps.generate-changelog.outputs.changes }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
