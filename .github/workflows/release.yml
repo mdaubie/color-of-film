@@ -32,12 +32,16 @@ jobs:
           token: ${{ github.token }}
           tag: ${{ steps.versioning.outputs.nextStrict }}
           excludeTypes: chore
-      - name: Commit CHANGELOG.md
+      - name: Update pom.xml
+        run: mvn -B versions:set -DnewVersion=${{ steps.versioning.outputs.nextStrict }} -DgenerateBackupPoms=false
+      - name: Commit CHANGELOG.md and pom.xml
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add CHANGELOG.md
           git commit -m "chore(release): update CHANGELOG.md for ${{ steps.versioning.outputs.next }}"
+          git add pom.xml
+          git commit -m "chore(release): update pom.xml for ${{ steps.versioning.outputs.next }}"
           git push origin master
       - name: Create release tag
         uses: actions/create-release@v1
