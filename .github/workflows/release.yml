@@ -10,10 +10,13 @@ jobs:
   release:
     permissions:
       contents: write
+      id-token: write # Enable OIDC for gitSign
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+      - name: Setup signature
+        uses: chainguard-dev/actions/setup-gitsign@main
       - name: Determine next version
         id: versioning
         uses: ietf-tools/semver-action@v1
@@ -21,7 +24,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
           patchList: fix, refactor, ci, docs, perf, style, test
-      - name: Create tag
+      - name: Create tag # next tag needs to exist for changelog generation
+        id: generate-tag
         run: |
           git tag ${{ steps.versioning.outputs.nextStrict }}
           git push origin ${{ steps.versioning.outputs.nextStrict }}
@@ -55,3 +59,6 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete generated tag on failure
+        if: failure() && steps.generate-tag.outcome == 'success'
+        run: git tag -d ${{ steps.versioning.outputs.nextStrict }}
