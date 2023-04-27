@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  workflow_dispatch: # Trigger manually
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Determine next version
+        id: versioning
+        uses: ietf-tools/semver-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: master
+          patchList: fix, refactor, ci, docs, perf, style, test
+      - name: Create release tag
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ steps.versioning.outputs.nextStrict }}
+          release_name: Release ${{ steps.versioning.outputs.nextStrict }}
+          body: |
+            Changes in this release:
+            _
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
