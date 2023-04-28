@@ -78,6 +78,10 @@ public class ImageBuilder {
         this.shapers = shapers;
     }
 
+    public void setShapers(ImageShaper.SHAPES... shapers) {
+        this.shapers = Arrays.stream(shapers).map(ImageShaper.SHAPES::getInstance).toArray(ImageShaper[]::new);
+    }
+
     public void setOutputTitle(String outputTitle) {
         this.outputTitle = outputTitle;
     }

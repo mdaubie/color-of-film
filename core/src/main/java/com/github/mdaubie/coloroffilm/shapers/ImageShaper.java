@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 
 public abstract class ImageShaper {
     protected BufferedImage image;
@@ -47,6 +48,26 @@ public abstract class ImageShaper {
                 dt.open(f);
             } catch (IOException e) {
                 System.out.println("Could not open file");
+            }
+        }
+    }
+
+    public enum SHAPES {
+        DISC(DiscShaper.class),
+        BARCODE(BarcodeShaper.class);
+
+        private final Class<? extends ImageShaper> shaperClass;
+
+        SHAPES(Class<? extends ImageShaper> shaperClass) {
+            this.shaperClass = shaperClass;
+        }
+
+        public ImageShaper getInstance() {
+            try {
+                return this.shaperClass.getConstructor().newInstance();
+            } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException | InstantiationException var2) {
+                var2.printStackTrace();
+                return null;
             }
         }
     }
