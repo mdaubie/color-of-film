@@ -32,6 +32,31 @@ public class FilmCapture extends VideoCapture {
         System.out.printf("Number of frames: %d (%,.2f fps)%n", framesNumber, frameRate);
     }
 
+    public ImageBuilder getBuilder(int resolution) {
+        return getBuilder(resolution, framesNumber - 1);
+    }
+
+    public ImageBuilder getBuilder(int resolution, int endFrameIdx) {
+        return getBuilder(resolution, 0, endFrameIdx);
+    }
+
+    public ImageBuilder getBuilder(int resolution, int startFrameIdx, int endFrameIdx) {
+        if (outputTitle == null)
+            outputTitle = file.getName();
+        if (outputDir == null)
+            outputDir = file.getParent();
+        System.out.printf("Output directory: %s%n", outputDir);
+        if (startFrameIdx < 0 || startFrameIdx > endFrameIdx || endFrameIdx >= framesNumber)
+            throw new InvalidParameterException("Invalid start or end frame index");
+        ImageBuilder builder = new ImageBuilder(this, resolution, startFrameIdx, endFrameIdx);
+        if (startFrameIdx == 0 && endFrameIdx == framesNumber - 1)
+            outputTitle += "_complete";
+        else
+            outputTitle += "_frame_" + startFrameIdx + "_to_" + endFrameIdx;
+        builder.setOutputTitle(outputTitle);
+        return builder;
+    }
+
     public void setOutputDir(String outputDir) {
         this.outputDir = outputDir;
     }
