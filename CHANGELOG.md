@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.3] - 2023-04-28
+### :construction_worker: Build System
+- [`6789dd3`](https://github.com/mdaubie/color-of-film/commit/6789dd303e74b37b473cb5f0d95f7bf2e40e3cd1) - **publish**: add Maven distribution configuration with ossrh *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`699b022`](https://github.com/mdaubie/color-of-film/commit/699b0221a34f36d3ed59629f0e35fa18edd70b4d) - **publish**: add publish workflow with ossrh *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
+## [0.3.1] - 2023-04-28
+### :bug: Bug Fixes
+- [`a1eecf3`](https://github.com/mdaubie/color-of-film/commit/a1eecf34f44a2aa2d995359e0da02a109a41d83d) - **release**: add module poms in the Maven version commit *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`95a17f6`](https://github.com/mdaubie/color-of-film/commit/95a17f69eb1a54a93c65c26b4541a67260850f4b) - **release**: Rollback 854cfe2, the next tag need to be pushed on origin for changelog step *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :recycle: Refactors
+- [`854cfe2`](https://github.com/mdaubie/color-of-film/commit/854cfe2f6807072953d7f531ac33a7944735a518) - **release**: remove new tag push, since it will be on create release step, remove deletion tag step too *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :construction_worker: Build System
+- [`e28da52`](https://github.com/mdaubie/color-of-film/commit/e28da52b9cac82d43ec3a47d3da4f60c611eddc6) - **release**: add build and cd to the patch type list for versioning *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
 ## [0.3.0] - 2023-04-28
 ### :sparkles: New Features
 - [`cb7d00d`](https://github.com/mdaubie/color-of-film/commit/cb7d00d6c291232be84957f9df247b6c264d27fa) - **core**: add getBuilder wrapper method to instanciate the ImageBuilder class from VideoCapture class *(commit by [@mdaubie](https://github.com/mdaubie))*
@@ -34,3 +52,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.1.0]: https://github.com/mdaubie/color-of-film/compare/0.0.2...0.1.0
 [0.2.0]: https://github.com/mdaubie/color-of-film/compare/0.1.0...0.2.0
 [0.3.0]: https://github.com/mdaubie/color-of-film/compare/0.2.0...0.3.0
+[0.3.1]: https://github.com/mdaubie/color-of-film/compare/0.3.0...0.3.1
+[0.3.3]: https://github.com/mdaubie/color-of-film/compare/0.3.2...0.3.3
