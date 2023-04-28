@@ -26,7 +26,9 @@ jobs:
           patchList: fix, refactor, ci, docs, perf, style, test, build, cd
       - name: Create tag # next tag needs to exist for changelog generation
         id: generate-tag
-        run: git tag ${{ steps.versioning.outputs.nextStrict }}
+        run: |
+          git tag ${{ steps.versioning.outputs.nextStrict }}
+          git push origin ${{ steps.versioning.outputs.nextStrict }}
       - name: Update CHANGELOG.md
         id: generate-changelog
         uses: requarks/changelog-action@v1
@@ -57,3 +59,6 @@ jobs:
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Delete generated tag on failure
+        if: failure() && steps.generate-tag.outcome == 'success'
+        run: git tag -d origin ${{ steps.versioning.outputs.nextStrict }}
