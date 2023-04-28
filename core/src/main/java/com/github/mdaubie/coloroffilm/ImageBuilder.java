@@ -19,6 +19,7 @@ public class ImageBuilder {
     private final int resolution;
     private ImageShaper[] shapers;
     private String outputTitle = "";
+    private boolean openFileOnSave = false;
 
     //Recommended to use de FilmCapture.getBuilder() method
     public ImageBuilder(FilmCapture capture, int resolution, int startFrameIdx, int endFrameIdx) {
@@ -42,6 +43,7 @@ public class ImageBuilder {
         float averageChunkSize = (float) numberOfFrames / resolution;
         capture.set(Videoio.CAP_PROP_POS_FRAMES, startFrameIdx);
         int frameIdx = startFrameIdx;
+        ProgressDisplay progressDisplay = new ProgressDisplay(resolution);
         for (int chunkIndex = 0; chunkIndex < resolution; chunkIndex++) {
             int chunkLimitIdx = (int) (averageChunkSize * (chunkIndex + 1));
             int chunkSize = chunkLimitIdx - frameIdx;
@@ -63,11 +65,13 @@ public class ImageBuilder {
             for (ImageShaper painter : shapers)
                 painter.paintChunk(chunkColor, chunkIndex, resolution);
             long chunkDuration = System.currentTimeMillis() - t0;
+            progressDisplay.print(chunkIndex + 1, chunkDuration);
         }
         System.out.println();
+        progressDisplay.printCompletion();
         capture.release();
         for (ImageShaper painter : shapers)
-            painter.saveImage(capture.outputDir, outputTitle);
+            painter.saveImage(capture.outputDir, outputTitle, openFileOnSave);
     }
 
     public void setShapers(ImageShaper... shapers) {
@@ -76,5 +80,9 @@ public class ImageBuilder {
 
     public void setOutputTitle(String outputTitle) {
         this.outputTitle = outputTitle;
+    }
+
+    public void setOpenFileOnSave(boolean openFileOnSave) {
+        this.openFileOnSave = openFileOnSave;
     }
 }
