@@ -5,7 +5,7 @@
     <parent>
         <artifactId>color-of-film</artifactId>
         <groupId>io.github.mdaubie.coloroffilm</groupId>
-        <version>0.3.1</version>
+        <version>0.3.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
