@@ -23,7 +23,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: master
-          patchList: fix, refactor, ci, docs, perf, style, test
+          patchList: fix, refactor, ci, docs, perf, style, test, build, cd
       - name: Create tag # next tag needs to exist for changelog generation
         id: generate-tag
         run: |
