@@ -1,6 +1,6 @@
-package com.github.mdaubie.coloroffilm;
+package io.github.mdaubie.coloroffilm;
 
-import com.github.mdaubie.coloroffilm.shapers.ImageShaper;
+import io.github.mdaubie.coloroffilm.shapers.ImageShaper;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
