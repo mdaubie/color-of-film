@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.5] - 2023-04-28
+### :bug: Bug Fixes
+- [`fe7f2f6`](https://github.com/mdaubie/color-of-film/commit/fe7f2f6336288900316902eb194ab0ad5c5356b5) - **publish**: Prevent gpg from using pinentry programs *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
 ## [0.3.4] - 2023-04-28
 ### :construction_worker: Build System
 - [`6a18693`](https://github.com/mdaubie/color-of-film/commit/6a18693a5dd5620075ee727b6eac92bb2bd4415c) - **publish**: add artifact signing with gpg *(commit by [@mdaubie](https://github.com/mdaubie))*
@@ -53,3 +58,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.3.0]: https://github.com/mdaubie/color-of-film/compare/0.2.0...0.3.0
 [0.3.1]: https://github.com/mdaubie/color-of-film/compare/0.3.0...0.3.1
 [0.3.4]: https://github.com/mdaubie/color-of-film/compare/0.3.3...0.3.4
+[0.3.5]: https://github.com/mdaubie/color-of-film/compare/0.3.4...0.3.5
