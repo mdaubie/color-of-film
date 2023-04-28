@@ -1,4 +1,4 @@
-package com.github.mdaubie.coloroffilm;
+package io.github.mdaubie.coloroffilm;
 
 import nu.pattern.OpenCV;
 import org.opencv.core.CvException;

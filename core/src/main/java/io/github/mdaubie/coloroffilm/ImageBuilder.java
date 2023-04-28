@@ -1,6 +1,6 @@
-package com.github.mdaubie.coloroffilm;
+package io.github.mdaubie.coloroffilm;
 
-import com.github.mdaubie.coloroffilm.shapers.ImageShaper;
+import io.github.mdaubie.coloroffilm.shapers.ImageShaper;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
@@ -76,6 +76,10 @@ public class ImageBuilder {
 
     public void setShapers(ImageShaper... shapers) {
         this.shapers = shapers;
+    }
+
+    public void setShapers(ImageShaper.SHAPES... shapers) {
+        this.shapers = Arrays.stream(shapers).map(ImageShaper.SHAPES::getInstance).toArray(ImageShaper[]::new);
     }
 
     public void setOutputTitle(String outputTitle) {

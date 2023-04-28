@@ -23,6 +23,13 @@ public class Main {
 }
 ```
 
+#### CLI
+
+``` console
+cd <filedir>
+java -jar color-of-film-cli-1.0.0-jar-with-dependencies.jar -fp <filename> -r 1000 --shapes DISC,BARCODE
+```
+
 ### Example
 
 Batman Begins (2005) - 1080p YIFY
