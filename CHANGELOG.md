@@ -4,10 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.3.3] - 2023-04-28
+## [0.4.0] - 2023-04-29
+### :sparkles: New Features
+- [`d87b577`](https://github.com/mdaubie/color-of-film/commit/d87b5776d4995ec4baf90576bc9e625f937f05b7) - **core**: add SHAPES enum for CLI support *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :recycle: Refactors
+- [`fcb9fcb`](https://github.com/mdaubie/color-of-film/commit/fcb9fcb371fc4fb3a051e29f07fe2208de0ffdac) - **core**: update core base package from com to io *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
+## [0.3.5] - 2023-04-28
+### :bug: Bug Fixes
+- [`fe7f2f6`](https://github.com/mdaubie/color-of-film/commit/fe7f2f6336288900316902eb194ab0ad5c5356b5) - **publish**: Prevent gpg from using pinentry programs *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
+## [0.3.4] - 2023-04-28
 ### :construction_worker: Build System
-- [`6789dd3`](https://github.com/mdaubie/color-of-film/commit/6789dd303e74b37b473cb5f0d95f7bf2e40e3cd1) - **publish**: add Maven distribution configuration with ossrh *(commit by [@mdaubie](https://github.com/mdaubie))*
-- [`699b022`](https://github.com/mdaubie/color-of-film/commit/699b0221a34f36d3ed59629f0e35fa18edd70b4d) - **publish**: add publish workflow with ossrh *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`6a18693`](https://github.com/mdaubie/color-of-film/commit/6a18693a5dd5620075ee727b6eac92bb2bd4415c) - **publish**: add artifact signing with gpg *(commit by [@mdaubie](https://github.com/mdaubie))*
 
 
 ## [0.3.1] - 2023-04-28
@@ -53,4 +65,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.2.0]: https://github.com/mdaubie/color-of-film/compare/0.1.0...0.2.0
 [0.3.0]: https://github.com/mdaubie/color-of-film/compare/0.2.0...0.3.0
 [0.3.1]: https://github.com/mdaubie/color-of-film/compare/0.3.0...0.3.1
-[0.3.3]: https://github.com/mdaubie/color-of-film/compare/0.3.2...0.3.3
+[0.3.4]: https://github.com/mdaubie/color-of-film/compare/0.3.3...0.3.4
+[0.3.5]: https://github.com/mdaubie/color-of-film/compare/0.3.4...0.3.5
+[0.4.0]: https://github.com/mdaubie/color-of-film/compare/0.3.5...0.4.0

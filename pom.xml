@@ -7,7 +7,7 @@
     <groupId>io.github.mdaubie.coloroffilm</groupId>
     <artifactId>color-of-film</artifactId>
     <packaging>pom</packaging>
-    <version>0.3.3</version>
+    <version>0.4.0</version>
 
     <name>Color of Film</name>
     <description>Builds an image from the average color of the frames of a video.</description>
@@ -95,6 +95,12 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <gpgArguments>
+                                <arg>--pinentry-mode</arg>
+                                <arg>loopback</arg>
+                            </gpgArguments>
+                        </configuration>
                     </plugin>
                     <plugin>
                         <groupId>org.sonatype.plugins</groupId>

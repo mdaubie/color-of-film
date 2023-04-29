@@ -1,4 +1,4 @@
-package com.github.mdaubie.coloroffilm.shapers;
+package io.github.mdaubie.coloroffilm.shapers;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
