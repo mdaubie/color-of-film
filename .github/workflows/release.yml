@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # Trigger manually
   push:
     branches:
-      - master
+      - release
 
 jobs:
   release:
@@ -22,7 +22,7 @@ jobs:
         uses: ietf-tools/semver-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: release
           patchList: fix, refactor, ci, docs, perf, style, test, build, cd
       - name: Create tag # next tag needs to exist for changelog generation
         id: generate-tag
@@ -46,6 +46,7 @@ jobs:
           git commit -m "chore(release): update CHANGELOG.md for ${{ steps.versioning.outputs.next }}"
           git add pom.xml */pom.xml
           git commit -m "chore(release): update Maven version for ${{ steps.versioning.outputs.next }}"
+          git push origin release
           git push origin master
       - name: Create release tag
         uses: actions/create-release@v1
