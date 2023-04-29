@@ -1,5 +1,11 @@
 # Color of film
 
+![version](https://img.shields.io/github/v/release/mdaubie/color-of-film?display_name=tag)
+![release status](https://img.shields.io/github/actions/workflow/status/mdaubie/color-of-film/release.yml?event=push)
+![checks status](https://img.shields.io/github/checks-status/mdaubie/color-of-film/master)
+![publish status](https://github.com/mdaubie/color-of-film/actions/workflows/publish.yml/badge.svg)
+![license](https://img.shields.io/github/license/mdaubie/color-of-film)
+
 Builds an image representing the chromatic identity of a film from the average color of its frames.
 
 ### How to use
