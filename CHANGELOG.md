@@ -4,6 +4,33 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2023-04-29
+### :boom: BREAKING CHANGES
+- due to [`ee14bc1`](https://github.com/mdaubie/color-of-film/commit/ee14bc10966c52d3c525a7bcde7cf7fef7af386f) - add CLI with picocli library *(commit by [@mdaubie](https://github.com/mdaubie))*:
+
+  add CLI with picocli library
+
+
+### :sparkles: New Features
+- [`ae7bfde`](https://github.com/mdaubie/color-of-film/commit/ae7bfdec76481a59f1b9dfa24318141e99d8e1a6) - **cli**: add cli module to Maven project *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`ee14bc1`](https://github.com/mdaubie/color-of-film/commit/ee14bc10966c52d3c525a7bcde7cf7fef7af386f) - **cli**: add CLI with picocli library *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :bug: Bug Fixes
+- [`cf4f047`](https://github.com/mdaubie/color-of-film/commit/cf4f047aa22e4aa675aaa7cd0429e0f193dc6e44) - **cli**: correct parent artifact version in cli pom *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :recycle: Refactors
+- [`9720e70`](https://github.com/mdaubie/color-of-film/commit/9720e707ce91edddd6429cd0ba4805e42459f643) - **cli**: update core dependency version to match last published version 0.4.0 *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :construction_worker: Build System
+- [`20be0f6`](https://github.com/mdaubie/color-of-film/commit/20be0f6c30390785feaa3ae03a6a2bdfdadd13f1) - **cli**: add jar-with-dependencies build configuration for CLI *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`388379d`](https://github.com/mdaubie/color-of-film/commit/388379dcb270d61415b1a33ae7aba70afc4d73fb) - **publish**: add Maven distribution configuration with ossrh *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`8330ee9`](https://github.com/mdaubie/color-of-film/commit/8330ee92679151a1471f3445415211ba232613ab) - **publish**: add publish workflow with ossrh *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`2fca8b8`](https://github.com/mdaubie/color-of-film/commit/2fca8b8951200becfcfdc6270188c2b7982edf08) - **publish**: add artifact signing with gpg *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :memo: Documentation Changes
+- [`eb93fee`](https://github.com/mdaubie/color-of-film/commit/eb93feea9597767014b3f860cc603e94dc69fd52) - **cli**: add bash snippet in README to execute CLI *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
 ## [0.4.0] - 2023-04-29
 ### :sparkles: New Features
 - [`d87b577`](https://github.com/mdaubie/color-of-film/commit/d87b5776d4995ec4baf90576bc9e625f937f05b7) - **core**: add SHAPES enum for CLI support *(commit by [@mdaubie](https://github.com/mdaubie))*
@@ -68,3 +95,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.3.4]: https://github.com/mdaubie/color-of-film/compare/0.3.3...0.3.4
 [0.3.5]: https://github.com/mdaubie/color-of-film/compare/0.3.4...0.3.5
 [0.4.0]: https://github.com/mdaubie/color-of-film/compare/0.3.5...0.4.0
+[1.0.0]: https://github.com/mdaubie/color-of-film/compare/0.4.0...1.0.0
