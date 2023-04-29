@@ -47,7 +47,7 @@ jobs:
           git add pom.xml */pom.xml
           git commit -m "chore(release): update Maven version for ${{ steps.versioning.outputs.next }}"
           git push origin release
-          git push origin master
+          git push origin release:master
       - name: Create release tag
         uses: actions/create-release@v1
         with:
