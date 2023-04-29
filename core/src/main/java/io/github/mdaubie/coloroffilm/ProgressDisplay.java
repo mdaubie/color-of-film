@@ -1,4 +1,4 @@
-package com.github.mdaubie.coloroffilm;
+package io.github.mdaubie.coloroffilm;
 
 //TODO the delay slightly increases linearly
 // add a real time measurement of this increase to more accurately calculate the ETA
