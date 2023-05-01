@@ -4,22 +4,6 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.1] - 2023-04-29
-### :bug: Bug Fixes
-- [`46f625d`](https://github.com/mdaubie/color-of-film/commit/46f625d2ba0d99b4b37ace236bdc48b155fbb5e1) - **release**: correct git tag deletion command *(commit by [@mdaubie](https://github.com/mdaubie))*
-
-### :recycle: Refactors
-- [`f979a98`](https://github.com/mdaubie/color-of-film/commit/f979a9856d10537d21522de1299eb335cb2d6ae2) - **release**: change release branch from master to release *(commit by [@mdaubie](https://github.com/mdaubie))*
-- [`9575ac4`](https://github.com/mdaubie/color-of-film/commit/9575ac41ba313776b5b9d0fe76773c66e520cce7) - **publish**: change publish branch from stable to publish *(commit by [@mdaubie](https://github.com/mdaubie))*
-
-### :memo: Documentation Changes
-- [`de028a0`](https://github.com/mdaubie/color-of-film/commit/de028a0c358ad271aad934688cc81c65406e830d) - add badges to README *(commit by [@mdaubie](https://github.com/mdaubie))*
-- [`c6722ba`](https://github.com/mdaubie/color-of-film/commit/c6722ba9628396907ffba88e3104637edef0cc7a) - add links to the appropriate resource on the README badges *(commit by [@mdaubie](https://github.com/mdaubie))*
-
-### :art: Code Style Changes
-- [`802d2c3`](https://github.com/mdaubie/color-of-film/commit/802d2c3e1e861c51d4b9fabe7bc6863335b8a4a1) - shorten publish job name, so it look nicer in the README *(commit by [@mdaubie](https://github.com/mdaubie))*
-
-
 ## [1.0.0] - 2023-04-29
 ### :boom: BREAKING CHANGES
 - due to [`ee14bc1`](https://github.com/mdaubie/color-of-film/commit/ee14bc10966c52d3c525a7bcde7cf7fef7af386f) - add CLI with picocli library *(commit by [@mdaubie](https://github.com/mdaubie))*:
@@ -112,4 +96,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.3.5]: https://github.com/mdaubie/color-of-film/compare/0.3.4...0.3.5
 [0.4.0]: https://github.com/mdaubie/color-of-film/compare/0.3.5...0.4.0
 [1.0.0]: https://github.com/mdaubie/color-of-film/compare/0.4.0...1.0.0
-[1.0.1]: https://github.com/mdaubie/color-of-film/compare/1.0.0...1.0.1
