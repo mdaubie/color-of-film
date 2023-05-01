@@ -48,6 +48,8 @@ jobs:
           git commit -m "chore(release): update Maven version for ${{ steps.versioning.outputs.next }}"
           git push origin release
           git push origin release:master
+          git tag -f ${{ steps.versioning.outputs.nextStrict }}
+          git push -f origin ${{ steps.versioning.outputs.nextStrict }}
       - name: Create release tag
         uses: actions/create-release@v1
         with:
