@@ -47,7 +47,6 @@ jobs:
           git add pom.xml */pom.xml
           git commit -m "chore(release): update Maven version for ${{ steps.versioning.outputs.next }}"
           git push origin release
-          git push origin release:master
           git tag -f ${{ steps.versioning.outputs.nextStrict }}
           git push -f origin ${{ steps.versioning.outputs.nextStrict }}
       - name: Create release tag
@@ -65,3 +64,7 @@ jobs:
       - name: Delete generated tag on failure
         if: failure() && steps.generate-tag.outcome == 'success'
         run: git push -d origin ${{ steps.versioning.outputs.nextStrict }}
+      - name: Push version commits to master
+        run: |
+          git pull origin master
+          git push origin release:master
