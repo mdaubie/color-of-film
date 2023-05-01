@@ -39,6 +39,7 @@ jobs:
       - name: Update pom.xml
         run: mvn -B versions:set -DnewVersion=${{ steps.versioning.outputs.nextStrict }} -DgenerateBackupPoms=false
       - name: Commit CHANGELOG.md and pom.xml
+        id: version-commits
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -46,10 +47,11 @@ jobs:
           git commit -m "chore(release): update CHANGELOG.md for ${{ steps.versioning.outputs.next }}"
           git add pom.xml */pom.xml
           git commit -m "chore(release): update Maven version for ${{ steps.versioning.outputs.next }}"
-          echo "VERSION_COMMIT_SHA=$(git rev-parse HEAD)" >> $GITHUB_ENV
           git push origin release
-          git push origin release:master
-      - name: Create release tag
+          git tag -f ${{ steps.versioning.outputs.nextStrict }}
+          git push -f origin ${{ steps.versioning.outputs.nextStrict }}
+      - name: Create release
+        id: create-release
         uses: actions/create-release@v1
         with:
           tag_name: ${{ steps.versioning.outputs.nextStrict }}
@@ -59,9 +61,17 @@ jobs:
             ${{ steps.generate-changelog.outputs.changes }}
           draft: false
           prerelease: false
-          commitish: ${{ env.VERSION_COMMIT_SHA }} # include generated version commits in the release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Delete generated tag on failure
         if: failure() && steps.generate-tag.outcome == 'success'
         run: git push -d origin ${{ steps.versioning.outputs.nextStrict }}
+      - name: Revert generated version commits on failure
+        if: failure() && steps.version-commits.outcome == 'success'
+        run: |
+          git revert --no-edit ${{ env.GITHUB_SHA }}..HEAD
+          git push origin release
+      - name: Push version commits to master
+        run: |
+          git pull origin master
+          git push origin release:master
