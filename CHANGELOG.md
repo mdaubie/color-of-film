@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2023-05-02
+### :bug: Bug Fixes
+- [`9906f36`](https://github.com/mdaubie/color-of-film/commit/9906f36841dee1c93bbe73f062337cc41b32613e) - **publish**: correct java version and distribution *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
 ## [1.0.3] - 2023-05-02
 ### :bug: Bug Fixes
 - [`9f23618`](https://github.com/mdaubie/color-of-film/commit/9f23618dfcfbaf883c513b9e324deb9c4f81cc07) - **release**: unshallow the job repo, to be able to use master *(commit by [@mdaubie](https://github.com/mdaubie))*
@@ -138,3 +143,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.0.1]: https://github.com/mdaubie/color-of-film/compare/1.0.0...1.0.1
 [1.0.2]: https://github.com/mdaubie/color-of-film/compare/1.0.1...1.0.2
 [1.0.3]: https://github.com/mdaubie/color-of-film/compare/1.0.2...1.0.3
+[1.0.4]: https://github.com/mdaubie/color-of-film/compare/1.0.3...1.0.4
