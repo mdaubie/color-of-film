@@ -7,7 +7,7 @@
     <groupId>io.github.mdaubie.coloroffilm</groupId>
     <artifactId>color-of-film</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>Color of Film</name>
     <description>Builds an image from the average color of the frames of a video.</description>

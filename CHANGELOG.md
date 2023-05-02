@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2023-05-02
+### :bug: Bug Fixes
+- [`0f27102`](https://github.com/mdaubie/color-of-film/commit/0f271029195dbe24ae166d88eb08c7371964f31b) - **release**: change master update from release to a merge *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+### :memo: Documentation Changes
+- [`2543af5`](https://github.com/mdaubie/color-of-film/commit/2543af509744b441db8a51fb325ef316fefe087c) - add the parameters used for the README example *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`87682c5`](https://github.com/mdaubie/color-of-film/commit/87682c54e6a0d9f142de534f09ff66a7e5fc68f2) - add a notes section in the README, with a first note on versioning *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`e839f78`](https://github.com/mdaubie/color-of-film/commit/e839f783a02b5caae5151d62a439e8398e1bf86e) - add a related projects section in the README *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
 ## [1.0.1] - 2023-05-01
 ### :bug: Bug Fixes
 - [`46f625d`](https://github.com/mdaubie/color-of-film/commit/46f625d2ba0d99b4b37ace236bdc48b155fbb5e1) - **release**: correct git tag deletion command *(commit by [@mdaubie](https://github.com/mdaubie))*
@@ -120,3 +130,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [0.4.0]: https://github.com/mdaubie/color-of-film/compare/0.3.5...0.4.0
 [1.0.0]: https://github.com/mdaubie/color-of-film/compare/0.4.0...1.0.0
 [1.0.1]: https://github.com/mdaubie/color-of-film/compare/1.0.0...1.0.1
+[1.0.2]: https://github.com/mdaubie/color-of-film/compare/1.0.1...1.0.2
