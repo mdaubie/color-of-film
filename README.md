@@ -38,7 +38,8 @@ java -jar color-of-film-cli-1.0.0-jar-with-dependencies.jar -fp <filename> -r 10
 
 ### Example
 
-Batman Begins (2005) - 1080p YIFY
+Batman Begins (2005) - 1080p YIFY, using a resolution of 1000 chunks, both Barcode and Disc shapes, and all the frames
+of the movie:
 
 | Barcode | Disc |
 | --- | --- |
@@ -63,3 +64,20 @@ The built image is in 32bits, the dimensions are roughly resolution × resolutio
 compressed, so the space complexity is quadratic. Therefore, if you use too large resolution you will reach heap space.
 For example, using resolution 25000 with the disc shape would result in a 50001 × 50001 image in 32bits which results in
 a RAM need of 50001 × 50001 × 4octet = 10 GB
+
+### Notes
+
+- Versioning: I'm sorry about the git history on this repo, it is quite disastrous, this was my first time using
+  conventional commits, semantic release, and GitHub Actions, so it's quite dirty, but it should be cleaner from now one
+
+### Related projects
+
+I am working on a web app project to handle my collection of downloaded movies and series, you can find it
+here: [The Movie Shelf](https://github.com/mdaubie/movie-shelf)
+
+This is a personal project for my needs, so it probably won't be interesting for you (I might actually keep it private),
+but I need to develop some libraries for this main project which might be useful to you:
+
+- [MKV Toolbox](https://github.com/mdaubie/mkv-toolbox)
+- [Srt Parser](https://github.com/mdaubie/srt-parser)
+- [Torrent Name Parser](https://github.com/mdaubie/torrent-name-parser)
