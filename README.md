@@ -64,3 +64,8 @@ The built image is in 32bits, the dimensions are roughly resolution × resolutio
 compressed, so the space complexity is quadratic. Therefore, if you use too large resolution you will reach heap space.
 For example, using resolution 25000 with the disc shape would result in a 50001 × 50001 image in 32bits which results in
 a RAM need of 50001 × 50001 × 4octet = 10 GB
+
+### Notes
+
+- Versioning: I'm sorry about the git history on this repo, it is quite disastrous, this was my first time using
+  conventional commits, semantic release, and GitHub Actions, so it's quite dirty, but it should be cleaner from now one
