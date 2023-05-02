@@ -38,7 +38,8 @@ java -jar color-of-film-cli-1.0.0-jar-with-dependencies.jar -fp <filename> -r 10
 
 ### Example
 
-Batman Begins (2005) - 1080p YIFY
+Batman Begins (2005) - 1080p YIFY, using a resolution of 1000 chunks, both Barcode and Disc shapes, and all the frames
+of the movie:
 
 | Barcode | Disc |
 | --- | --- |
