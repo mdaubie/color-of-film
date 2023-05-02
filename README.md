@@ -69,3 +69,15 @@ a RAM need of 50001 × 50001 × 4octet = 10 GB
 
 - Versioning: I'm sorry about the git history on this repo, it is quite disastrous, this was my first time using
   conventional commits, semantic release, and GitHub Actions, so it's quite dirty, but it should be cleaner from now one
+
+### Related projects
+
+I am working on a web app project to handle my collection of downloaded movies and series, you can find it
+here: [The Movie Shelf](https://github.com/mdaubie/movie-shelf)
+
+This is a personal project for my needs, so it probably won't be interesting for you (I might actually keep it private),
+but I need to develop some libraries for this main project which might be useful to you:
+
+- [MKV Toolbox](https://github.com/mdaubie/mkv-toolbox)
+- [Srt Parser](https://github.com/mdaubie/srt-parser)
+- [Torrent Name Parser](https://github.com/mdaubie/torrent-name-parser)
