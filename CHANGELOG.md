@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2023-05-02
+### :bug: Bug Fixes
+- [`9f23618`](https://github.com/mdaubie/color-of-film/commit/9f23618dfcfbaf883c513b9e324deb9c4f81cc07) - **release**: unshallow the job repo, to be able to use master *(commit by [@mdaubie](https://github.com/mdaubie))*
+- [`aa9a26c`](https://github.com/mdaubie/color-of-film/commit/aa9a26ce46f78a681d7f13b04ada5a0d7f6861ea) - **publish**: update maven-gpg-plugin config *(commit by [@mdaubie](https://github.com/mdaubie))*
+
+
 ## [1.0.2] - 2023-05-02
 ### :bug: Bug Fixes
 - [`0f27102`](https://github.com/mdaubie/color-of-film/commit/0f271029195dbe24ae166d88eb08c7371964f31b) - **release**: change master update from release to a merge *(commit by [@mdaubie](https://github.com/mdaubie))*
@@ -131,3 +137,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [1.0.0]: https://github.com/mdaubie/color-of-film/compare/0.4.0...1.0.0
 [1.0.1]: https://github.com/mdaubie/color-of-film/compare/1.0.0...1.0.1
 [1.0.2]: https://github.com/mdaubie/color-of-film/compare/1.0.1...1.0.2
+[1.0.3]: https://github.com/mdaubie/color-of-film/compare/1.0.2...1.0.3
