@@ -73,5 +73,6 @@ jobs:
           git push origin release
       - name: Push version commits to master
         run: |
-          git pull origin master
-          git push origin release:master
+          git checkout master
+          git merge --ff release
+          git push origin master
