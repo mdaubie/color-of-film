@@ -14,7 +14,7 @@ jobs:
       - name: Set up Java for publishing to Maven Central Repository
         uses: actions/setup-java@v3
         with:
-          java-version: '8'
+          java-version: 1.8
           distribution: 'adopt'
           server-id: ossrh
           cache: 'maven'
@@ -24,7 +24,7 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
       - name: Publish to the Maven Central Repository
         id: publish-to-central
-        run: mvn --batch-mode clean deploy -P release
+        run: mvn --batch-mode deploy -P release
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
